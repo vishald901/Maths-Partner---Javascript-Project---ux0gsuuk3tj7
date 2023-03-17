@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Partner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/eb339bb978.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="upper-container">
+        <h1>Math Partner</h1>
+        <input type="button" id="historyBtn" value="History" onclick="historyButton()">
+        <input type="button" id="savedBtn" value="Saved Solution" onclick="SavedButton()">
+    </div>
+
+    <div class="middle-container">
+        <div class="box1">
+            <label for="problemBar">
+                <h2>Problem</h2>
+            </label>
+            <input type="text" id="problemBar" placeholder="TYPE HERE........">
+        </div>
+
+        <div class="box2">
+            <label for="categoryBar">
+                <h2>select Category</h2>
+            </label>
+            <select name="categoryBar" id="categoryBar">
+                <option value="simlify">Simplify</option>
+                <option value="factor">Factor</option>
+                <option value="integrate">Integrate</option>
+                <option value="zeros">Find 0's</option>
+                <option value="tangent">Find Tangent</option>
+                <option value="area">Area Under Curve</option>
+                <option value="cos">Cosine</option>
+                <option value="sin">Sine</option>
+                <option value="tan">Tangent</option>
+                <option value="arccos">Inverse Cosine</option>
+                <option value="arcsin">Inverse Sine</option>
+                <option value="arctan">Inverse Tangent</option>
+                <option value="abs">Absolute Value</option>
+                <option value="log">Logarthism</option>
+
+            </select>
+        </div>
+        <div class="box3">
+            <button type="submit" id="searchBtn" onclick="SearchButton()"><i
+                    class="fa-solid fa-magnifying-glass fa-3x"></i></button>
+
+        </div>
+    </div>
+    <div class="container-input">
+        <div class="inputBox1"></div>
+        <div class="inputBox2"></div>
+
+        <button type="reset" id="deletBtn" onclick="delBtn()"><i class="fa-solid fa-trash-can fa-3x"></i></button>
+    </div>
+    <script src="App.js"></script>
+</body>
+
+</html>
