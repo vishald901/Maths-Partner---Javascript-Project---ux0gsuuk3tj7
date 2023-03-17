@@ -12,9 +12,12 @@
 
 <body>
     <div class="upper-container">
-        <h1>Math Partner</h1>
+        <h1> Math Partner</h1>
         <input type="button" id="historyBtn" value="History" onclick="historyButton()">
-        <input type="button" id="savedBtn" value="Saved Solution" onclick="SavedButton()">
+        <input type="button" id="savedBtn" value="SAVED SOLUTIONS" onclick="SavedButton()">
+    </div>
+    <div class="historycon">
+
     </div>
 
     <div class="middle-container">
@@ -22,7 +25,7 @@
             <label for="problemBar">
                 <h2>Problem</h2>
             </label>
-            <input type="text" id="problemBar" placeholder="TYPE HERE........">
+            <input type="text" id="problemBar" placeholder="TYPE HERE......">
         </div>
 
         <div class="box2">
@@ -30,10 +33,11 @@
                 <h2>select Category</h2>
             </label>
             <select name="categoryBar" id="categoryBar">
-                <option value="simlify">Simplify</option>
+                <option value="simplify">Simplify</option>
                 <option value="factor">Factor</option>
+                <option value="derive">Derive</option>
                 <option value="integrate">Integrate</option>
-                <option value="zeros">Find 0's</option>
+                <option value="zeroes">Find 0's</option>
                 <option value="tangent">Find Tangent</option>
                 <option value="area">Area Under Curve</option>
                 <option value="cos">Cosine</option>
@@ -43,22 +47,25 @@
                 <option value="arcsin">Inverse Sine</option>
                 <option value="arctan">Inverse Tangent</option>
                 <option value="abs">Absolute Value</option>
-                <option value="log">Logarthism</option>
-
+                <option value="log">Logarithm</option>
             </select>
         </div>
+
         <div class="box3">
             <button type="submit" id="searchBtn" onclick="SearchButton()"><i
                     class="fa-solid fa-magnifying-glass fa-3x"></i></button>
-
         </div>
+
     </div>
+
+
     <div class="container-input">
         <div class="inputBox1"></div>
         <div class="inputBox2"></div>
 
-        <button type="reset" id="deletBtn" onclick="delBtn()"><i class="fa-solid fa-trash-can fa-3x"></i></button>
+        <button type="reset" id="deleteBtn" onclick="delBtn()"><i class="fa-solid fa-trash-can fa-3x"></i></button>
     </div>
+
     <script src="App.js"></script>
 </body>
 
