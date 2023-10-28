@@ -11,61 +11,101 @@
 </head>
 
 <body>
-    <div class="upper-container">
-        <h1> Math Partner</h1>
-        <input type="button" id="historyBtn" value="History" onclick="historyButton()">
-        <input type="button" id="savedBtn" value="SAVED SOLUTIONS" onclick="SavedButton()">
-    </div>
-    <div class="historycon">
-
-    </div>
-
-    <div class="middle-container">
-        <div class="box1">
-            <label for="problemBar">
-                <h2>Problem</h2>
-            </label>
-            <input type="text" id="problemBar" placeholder="TYPE HERE......">
-        </div>
-
-        <div class="box2">
-            <label for="categoryBar">
-                <h2>select Category</h2>
-            </label>
-            <select name="categoryBar" id="categoryBar">
-                <option value="simplify">Simplify</option>
-                <option value="factor">Factor</option>
-                <option value="derive">Derive</option>
-                <option value="integrate">Integrate</option>
-                <option value="zeroes">Find 0's</option>
-                <option value="tangent">Find Tangent</option>
-                <option value="area">Area Under Curve</option>
-                <option value="cos">Cosine</option>
-                <option value="sin">Sine</option>
-                <option value="tan">Tangent</option>
-                <option value="arccos">Inverse Cosine</option>
-                <option value="arcsin">Inverse Sine</option>
-                <option value="arctan">Inverse Tangent</option>
-                <option value="abs">Absolute Value</option>
-                <option value="log">Logarithm</option>
+    <div class="calendar">
+        <div class="header">
+            <select id="month" onchange="updateCalendar()">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <!-- ... (add all months) ... -->
+            </select>
+            <select id="year" onchange="updateCalendar()">
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <!-- ... (add years as needed) ... -->
             </select>
         </div>
-
-        <div class="box3">
-            <button type="submit" id="searchBtn" onclick="SearchButton()"><i
-                    class="fa-solid fa-magnifying-glass fa-3x"></i></button>
+        <div class="calendar-container" id="calendar-container">
+            <!-- Calendar will be generated here -->
         </div>
-
+        <input type="text" id="date-input" onkeydown="changeCellColor(event)">
     </div>
+    <script src="script.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calendar {
+    border: 1px solid #000;
+    text-align: center;
+    width: 300px;
+    padding: 10px;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.cell {
+    border: 1px solid #000;
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.green {
+    background-color: green;
+}
+JavaScript (script.js):
+
+javascript
+Copy code
+function updateCalendar() {
+    const month = document.getElementById("month").value;
+    const year = document.getElementById("year").value;
+
+    // Send a POST request to your PHP server with month and year.
+    // Process the response to generate the calendar and update #calendar-container.
+    // You need server-side code to generate the calendar based on your data.
+
+    // Example:
+    // const calendarHTML = "<div class='cell'>1</div><div class='cell'>2</div>..."; 
+    // document.getElementById("calendar-container").innerHTML = calendarHTML;
+}
+
+function changeCellColor(event) {
+    if (event.key === "Enter") {
+        const inputDate = parseInt(document.getElementById("date-input").value);
+        // Send a POST request to your PHP server with the inputDate.
+        // Update the cell background color based on the response from the server.
+        // You need server-side code to handle this and store the last background color in PHP session.
+    }
+}
+This code gives you a basic structure for creating a calendar UI with the specified functionality. You'll need to implement the server-side logic in PHP separately.
 
 
-    <div class="container-input">
-        <div class="inputBox1"></div>
-        <div class="inputBox2"></div>
 
-        <button type="reset" id="deleteBtn" onclick="delBtn()"><i class="fa-solid fa-trash-can fa-3x"></i></button>
-    </div>
 
+
+Send a message
+
+
+Free Research Preview. ChatGPT may produce inaccurate information about people, pl
     <script src="App.js"></script>
 </body>
 
